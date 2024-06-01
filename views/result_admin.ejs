@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Results Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .candidate {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .candidate-name {
+            font-weight: bold;
+        }
+
+        .votes {
+            font-size: 18px;
+            color: #007bff;
+        }
+
+        .dashboard-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .dashboard-header h1 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="/logout">Logout</a>
+    <div class="container">
+        <div class="dashboard-header">
+            <h1>Election Results Dashboard</h1>
+        </div>
+        <div id="results">
+            <% candidates.forEach(candidate => { %>
+                <div class="candidate">
+                    <span class="candidate-name"><%= candidate[1] %></span>
+                    <span class="candidate-name"><%= candidate[2] %></span>
+                    <span class="votes"><%= candidate[0] %> votes</span>
+                </div>
+            <% }); %>
+        </div>
+    
+    </div>
+</body>
+</html>

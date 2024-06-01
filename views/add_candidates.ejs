@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add candiadates</title>
+</head>
+<body>
+    <p>Add candidates</p>
+    <form action="/add_candidates" method="post" enctype="multipart/form-data">
+        <label for="reg_no">Reg No:</label>
+        <input type="text" name="reg_no" id="reg_no"><p></p>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name"><p></p>
+        <label for="year">Year:</label>
+        <input type="number" name="year" id="year"><p></p>
+        <label for="sec">Section:</label>
+        <input type="text" name="sec" id="sec"><p></p>
+        <label for="dept">Dept:</label>
+        <input type="text" name="dept" id="dept"><p></p>
+        <label for="role">Role:</label>
+        <input type="text" name="role" id="role"><p></p>
+        <label for="reg_no" for="image">Profile:</label>
+        <input type="file" name="profile" id="image"><p></p>
+        <input type="submit" value="Submit">
+    </form>
+
+    <div>
+        <h1>Candidates list</h1>
+        <% candidates.forEach(candidate => { %>
+            <div class="candidate">
+                <p><%= candidate[0] %></p>
+                <p><%= candidate[1] %></p>
+                <p><%= candidate[2] %></p>
+                <img src="data:image/jpg;base64,<%= candidate[3] %>" alt="Profile">
+                
+
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>
